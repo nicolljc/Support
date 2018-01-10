@@ -1,0 +1,1 @@
+Get-ADUser -Filter {(Enabled -eq "False") -And (SamAccountName -like '*.*')} -Properties Description | ? {($_.distinguishedname -notlike '*Disabled Users*')} | FT SamAccountName,Company,Name,Description | Out-File c:\!Support\Disabled.txt
