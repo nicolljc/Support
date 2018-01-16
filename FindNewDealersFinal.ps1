@@ -7,10 +7,9 @@ Start-Transcript -path C:\!Support\DealerOutput.txt
 $OUs = "OU=Dealer Candidates,OU=CSOKI,DC=CSOKI,DC=local","OU=Dealer Candidates,OU=Employees,OU=CSOKI,DC=CSOKI,DC=local"
 
 # OU loop
-ForEach ($OU in $OUs) 
-	{
+$OUs | ForEach{
 		# Search for newly coded Dealers
-		Get-ADUser -Filter {Title -like "Sales Rep*"} -Properties SamAccountName,Title -SearchBase $OU | 
+		Get-ADUser -Filter {Title -like "Sales Rep*"} -Properties SamAccountName,Title -SearchBase $_ |  
 		%{
 			# Add Dealers & Role_dealer groups to AD accounts
 			"dealers","role_dealer" | 
