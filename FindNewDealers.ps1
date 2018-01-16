@@ -1,5 +1,6 @@
-$OUs = "OU=Dealer Candidates,OU=Employees,OU=CSOKI,DC=CSOKI,DC=local",
-		"OU=Dealer Candidates,OU=CSOKI,DC=CSOKI,DC=local"
+$OUs = "OU=Dealer Candidates,OU=CSOKI,DC=CSOKI,DC=local",
+"OU=Dealer Candidates,OU=Employees,OU=CSOKI,DC=CSOKI,DC=local"
+		
 
 ForEach ($OU in $OUs) 
 	{
